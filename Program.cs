@@ -30,17 +30,23 @@ namespace BlogsConsole
             return new Blog { Name = name };
         }
 
-        // static Blog getBlogByName(string name) {
-
-
-        // }
+        static Blog getBlogById(BloggingContext db, int blogId) {
+               
+            Blog blog = db.Blogs.FirstOrDefault(b => b.BlogId == blogId);
+            if (blog != null)
+            {
+                return blog;
+            }
+            return null;
+            
+        }
 
         static Post createPostWorkflow(BloggingContext db) {
 
             Console.WriteLine("Please Choose A Blog To Post To.");
             displayAllBlogs(db, true);
-            var blogChoice = Console.ReadLine();
-
+            var blogId = Console.ReadLine();
+            Blog blog = getBlogById(db, blogId);
             Console.Write("Enter a title for the new Post:");
             var title = Console.ReadLine();
             Console.Write("Enter content for the new Post");
@@ -74,8 +80,6 @@ namespace BlogsConsole
                     case "1":
                     // Display All Blogs, pass in database context
                         displayAllBlogs(db, false);
-                        displayAllBlogs(db, true);
-
                         break;
                     case "2":
                     // Add Blog
