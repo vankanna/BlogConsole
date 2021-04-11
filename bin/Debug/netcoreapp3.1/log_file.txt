@@ -13,3 +13,6 @@
 2021-04-11 00:15:32.0156|INFO|BlogsConsole.Program|Program started
 2021-04-11 00:15:46.6616|INFO|BlogsConsole.Program|Blog added - "Test Blog One"
 2021-04-11 00:15:46.8538|INFO|BlogsConsole.Program|Program ended
+2021-04-11 16:44:44.5672|INFO|BlogsConsole.Program|Program started
+2021-04-11 16:45:07.5880|INFO|BlogsConsole.Program|Program started
+2021-04-11 16:45:11.1951|INFO|BlogsConsole.Program|Program ended
