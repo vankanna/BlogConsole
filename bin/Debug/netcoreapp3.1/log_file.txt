@@ -1,0 +1,12 @@
+2021-03-29 13:09:03.9824|INFO|BlogsConsole.Program|Program started
+2021-03-29 13:09:40.3236|INFO|BlogsConsole.Program|Blog added - "Puppies"
+2021-03-29 13:09:40.5995|INFO|BlogsConsole.Program|Program ended
+2021-03-29 13:09:53.2154|INFO|BlogsConsole.Program|Program started
+2021-03-29 13:09:59.6996|INFO|BlogsConsole.Program|Blog added - "Weather"
+2021-03-29 13:09:59.9686|INFO|BlogsConsole.Program|Program ended
+2021-03-29 13:16:56.4873|INFO|BlogsConsole.Program|Program started
+2021-03-29 13:17:05.2049|ERROR|BlogsConsole.Program|Value cannot be null. (Parameter 'connectionString')
+2021-03-29 13:17:05.2049|INFO|BlogsConsole.Program|Program ended
+2021-03-29 13:26:20.4572|INFO|BlogsConsole.Program|Program started
+2021-03-29 13:26:30.1250|INFO|BlogsConsole.Program|Blog added - "Food"
+2021-03-29 13:26:30.4994|INFO|BlogsConsole.Program|Program ended
