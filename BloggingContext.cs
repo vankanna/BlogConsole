@@ -15,6 +15,10 @@ namespace BlogsConsole
             this.SaveChanges();
         }
 
+        // public void ListBlogs() {
+        //     var blogs = this.Blogs;
+        //     var list = this.Blogs.OrderBy(b => b.Name);
+        // }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             IConfiguration config = new ConfigurationBuilder()
