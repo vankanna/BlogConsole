@@ -26,6 +26,7 @@ namespace BlogsConsole
                 .AddJsonFile("appsettings.json", true, true)
                 .Build();
             optionsBuilder.UseSqlServer(@config["BloggingContext:ConnectionString"]);
+            optionsBuilder.EnableSensitiveDataLogging();
         }
     }
 }

@@ -26,8 +26,13 @@ namespace BlogsConsole
         static Blog createBlogWorkflow() {
             Console.Write("Enter a name for a new Blog: ");
             var name = Console.ReadLine();
-            logger.Info("Blog added - {name}", name);
-            return new Blog { Name = name };
+            if (name != "") {
+                logger.Info("Blog added - {name}", name);
+                return new Blog { Name = name };
+            } else {
+                return null;
+            }
+            
         }
 
         static Blog getBlogById(BloggingContext db, int blogId) {
@@ -41,14 +46,21 @@ namespace BlogsConsole
         }
 
         static void listPostsByBlogId(BloggingContext db, Blog blog) {
-             var query = db.Posts.Where(p => p.BlogId == blog.BlogId).ToList();
+            Console.WriteLine(blog.Name + " test");
+            var query = db.Posts.Where(p => p.BlogId == blog.BlogId).ToList();
+            
+
             Console.WriteLine("Blog: " + blog.Name);
-            Console.WriteLine("Total Number Of Posts: " + query.Count());
-            foreach (var item in query)
-            {
-                Console.WriteLine(item.PostId + ") " + item.Title);
-                Console.WriteLine(item.Content + "\n");
-                
+            if (query.Count() > 0) {
+                Console.WriteLine("Total Number Of Posts: " + query.Count());
+                foreach (var item in query)
+                {
+                    Console.WriteLine("  " + item.PostId + ") " + item.Title);
+                    Console.WriteLine("  " + item.Content + "\n");
+                    
+                }
+            } else {
+                Console.WriteLine("Total Number Of Posts: 0");
             }
         }
 
@@ -57,16 +69,26 @@ namespace BlogsConsole
             var title = Console.ReadLine();
             Console.Write("Enter content for the new Post");
             var content = Console.ReadLine();
-            return new Post { BlogId = blog.BlogId, Title = title, Content = content, Blog = blog };
+            if (title != "") {
+                return new Post { BlogId = blog.BlogId, Title = title, Content = content, Blog = blog };
+            } else {
+                return null;
+            }
         }
 
         static Blog postPreWorkflow(BloggingContext db) {
             Console.WriteLine("Please Choose A Blog.");
+            Console.WriteLine("Please Enter 0 For All Blogs And All Posts");
             displayAllBlogs(db, true);
             var response = Console.ReadLine();
             if (int.TryParse(response, out int blogId))
             {
-                return getBlogById(db, blogId);
+                if (blogId == 0) {
+                    listAllBlogsAllPosts(db);
+                    return null;
+                } else {
+                    return getBlogById(db, blogId);
+                }
             }
             logger.Error("Not A Valid Blog Id.");
             return null;
@@ -87,11 +109,20 @@ namespace BlogsConsole
             }
         }
 
+        static void listAllBlogsAllPosts(BloggingContext db) {
+            var query = db.Blogs.OrderBy(b => b.Name).ToList();
+            foreach (var blog in query)
+            {
+                listPostsByBlogId(db, blog);
+            }
+        }
+
         static bool isUniqueBlog(BloggingContext db, Blog blog) {
             var query = db.Blogs.OrderBy(b => b.Name);
             foreach (var blogItem in query)
             {
                 if (blogItem.Name == blog.Name) {
+                    logger.Error("Please Choose a Unique Blog Name");
                     return false;
                 }
             }
@@ -116,23 +147,30 @@ namespace BlogsConsole
                         case "2":
                         // Add Blog
                             blog = createBlogWorkflow();
-                            if(isUniqueBlog(db, blog)){
+                            if(blog != null && isUniqueBlog(db, blog)){
                                 db.AddBlog(blog);
                             } else {
-                                logger.Error("Please Choose a Unique Blog Name");
+                                logger.Error("Please Give Your Blog A Name");
                             }
                             break;
                         case "3":
                         // Create Post
                             blog = postPreWorkflow(db);
-                            var post = createPost(db, blog);
-                            db.AddPost(post);
-                            logger.Info("Added Post");
+
+                            if (blog != null) {
+                                var post = createPost(db, blog);
+                                if (post != null) {
+                                    db.AddPost(post);
+                                    logger.Info("Added Post");
+                                }
+                            }
                             break;
                         case "4":
                         // Display Posts
                             blog = postPreWorkflow(db);
-                            listPostsByBlogId(db, blog);
+                            if (blog != null) {
+                                listPostsByBlogId(db, blog);
+                            }
                             break;
                         case "q":
                         // Exit

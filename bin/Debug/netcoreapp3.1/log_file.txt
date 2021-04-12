@@ -28,3 +28,65 @@
 2021-04-11 20:42:30.9434|INFO|BlogsConsole.Program|Program ended
 2021-04-11 20:42:38.2408|INFO|BlogsConsole.Program|Program started
 2021-04-11 20:43:01.4606|INFO|BlogsConsole.Program|Program ended
+2021-04-11 21:15:38.6303|INFO|BlogsConsole.Program|Program started
+2021-04-11 21:19:07.3748|ERROR|BlogsConsole.Program|Blog Not Found: 5
+2021-04-11 21:23:29.0255|INFO|BlogsConsole.Program|Program started
+2021-04-11 21:23:41.6245|ERROR|BlogsConsole.Program|Blog Not Found: 5
+2021-04-11 21:23:50.9755|ERROR|BlogsConsole.Program|Not A Valid Blog Id.
+2021-04-11 21:40:35.4174|INFO|BlogsConsole.Program|Program started
+2021-04-11 21:40:50.9267|ERROR|BlogsConsole.Program|There is already an open DataReader associated with this Connection which must be closed first.
+2021-04-11 21:42:23.9623|INFO|BlogsConsole.Program|Program started
+2021-04-11 21:43:07.1799|ERROR|BlogsConsole.Program|There is already an open DataReader associated with this Connection which must be closed first.
+2021-04-11 21:43:28.3302|INFO|BlogsConsole.Program|Program started
+2021-04-11 21:43:31.9319|ERROR|BlogsConsole.Program|There is already an open DataReader associated with this Connection which must be closed first.
+2021-04-11 21:49:31.6305|INFO|BlogsConsole.Program|Program started
+2021-04-11 21:52:33.5378|ERROR|BlogsConsole.Program|Object reference not set to an instance of an object.
+2021-04-11 21:53:49.4473|INFO|BlogsConsole.Program|Program started
+2021-04-11 21:53:51.4278|ERROR|BlogsConsole.Program|Object reference not set to an instance of an object.
+2021-04-11 21:54:13.1272|INFO|BlogsConsole.Program|Program started
+2021-04-11 21:54:23.8594|ERROR|BlogsConsole.Program|Please Choose a Unique Blog Name
+2021-04-11 22:10:01.5928|ERROR|BlogsConsole.Program|There is already an open DataReader associated with this Connection which must be closed first.
+2021-04-11 22:10:15.9298|ERROR|BlogsConsole.Program|There is already an open DataReader associated with this Connection which must be closed first.
+2021-04-11 22:11:50.5316|INFO|BlogsConsole.Program|Program started
+2021-04-11 22:12:30.1463|INFO|BlogsConsole.Program|Program started
+2021-04-11 22:13:08.2781|INFO|BlogsConsole.Program|Program started
+2021-04-11 22:13:27.0501|INFO|BlogsConsole.Program|Program started
+2021-04-11 22:13:37.1654|INFO|BlogsConsole.Program|Program started
+2021-04-11 22:13:44.5038|ERROR|BlogsConsole.Program|There is already an open DataReader associated with this Connection which must be closed first.
+2021-04-11 22:14:15.8100|INFO|BlogsConsole.Program|Program started
+2021-04-11 22:15:21.3133|INFO|BlogsConsole.Program|Program started
+2021-04-11 22:15:27.3611|ERROR|BlogsConsole.Program|There is already an open DataReader associated with this Connection which must be closed first.
+2021-04-11 22:15:50.7438|INFO|BlogsConsole.Program|Program started
+2021-04-11 22:15:54.5940|ERROR|BlogsConsole.Program|Not A Valid Blog Id.
+2021-04-11 22:15:54.5940|ERROR|BlogsConsole.Program|An exception was thrown while attempting to evaluate a LINQ query parameter expression. See the inner exception for more information. To show additional information call 'DbContextOptionsBuilder.EnableSensitiveDataLogging'.
+2021-04-11 22:17:31.4080|INFO|BlogsConsole.Program|Program started
+2021-04-11 22:17:34.3886|ERROR|BlogsConsole.Program|Not A Valid Blog Id.
+2021-04-11 22:17:34.3926|ERROR|BlogsConsole.Program|An exception was thrown while attempting to evaluate a LINQ query parameter expression. See the inner exception for more information. To show additional information call 'DbContextOptionsBuilder.EnableSensitiveDataLogging'.
+2021-04-11 22:18:09.7687|INFO|BlogsConsole.Program|Program started
+2021-04-11 22:18:12.0629|ERROR|BlogsConsole.Program|Not A Valid Blog Id.
+2021-04-11 22:18:12.0629|ERROR|BlogsConsole.Program|An exception was thrown while attempting to evaluate a LINQ query parameter expression. See the inner exception for more information. To show additional information call 'DbContextOptionsBuilder.EnableSensitiveDataLogging'.
+2021-04-11 22:19:02.0072|INFO|BlogsConsole.Program|Program started
+2021-04-11 22:19:05.9721|ERROR|BlogsConsole.Program|Not A Valid Blog Id.
+2021-04-11 22:19:05.9721|ERROR|BlogsConsole.Program|An exception was thrown while attempting to evaluate a LINQ query parameter expression. See the inner exception for more information. To show additional information call 'DbContextOptionsBuilder.EnableSensitiveDataLogging'.
+2021-04-11 22:19:51.5087|INFO|BlogsConsole.Program|Program started
+2021-04-11 22:19:54.8776|ERROR|BlogsConsole.Program|Not A Valid Blog Id.
+2021-04-11 22:19:54.8776|ERROR|BlogsConsole.Program|An exception was thrown while attempting to evaluate a LINQ query parameter expression. See the inner exception for more information. To show additional information call 'DbContextOptionsBuilder.EnableSensitiveDataLogging'.
+2021-04-11 22:20:25.4801|INFO|BlogsConsole.Program|Program started
+2021-04-11 22:20:29.3173|ERROR|BlogsConsole.Program|Not A Valid Blog Id.
+2021-04-11 22:20:29.3173|ERROR|BlogsConsole.Program|An exception was thrown while attempting to evaluate a LINQ query parameter expression. See the inner exception for more information. To show additional information call 'DbContextOptionsBuilder.EnableSensitiveDataLogging'.
+2021-04-11 22:20:56.8546|INFO|BlogsConsole.Program|Program started
+2021-04-11 22:21:05.1988|ERROR|BlogsConsole.Program|An exception was thrown while attempting to evaluate a LINQ query parameter expression. See the inner exception for more information. To show additional information call 'DbContextOptionsBuilder.EnableSensitiveDataLogging'.
+2021-04-11 22:23:10.0315|INFO|BlogsConsole.Program|Program started
+2021-04-11 22:23:17.1176|ERROR|BlogsConsole.Program|An exception was thrown while attempting to evaluate the LINQ query parameter expression 'value(BlogsConsole.Program+<>c__DisplayClass4_0).blog.BlogId'. See the inner exception for more information.
+2021-04-11 22:26:27.6650|INFO|BlogsConsole.Program|Program started
+2021-04-11 22:26:30.8729|ERROR|BlogsConsole.Program|Object reference not set to an instance of an object.
+2021-04-11 22:31:57.3419|INFO|BlogsConsole.Program|Program started
+2021-04-11 22:32:00.1153|ERROR|BlogsConsole.Program|An exception was thrown while attempting to evaluate the LINQ query parameter expression 'value(BlogsConsole.Program+<>c__DisplayClass4_0).blog.BlogId'. See the inner exception for more information.
+2021-04-11 22:36:17.4955|INFO|BlogsConsole.Program|Program started
+2021-04-11 22:36:20.2142|ERROR|BlogsConsole.Program|Object reference not set to an instance of an object.
+2021-04-11 22:37:10.2951|INFO|BlogsConsole.Program|Program started
+2021-04-11 22:39:43.2985|INFO|BlogsConsole.Program|Program started
+2021-04-11 22:39:54.3610|INFO|BlogsConsole.Program|Program started
+2021-04-11 22:40:03.5627|INFO|BlogsConsole.Program|Program started
+2021-04-11 22:40:18.5543|ERROR|BlogsConsole.Program|Object reference not set to an instance of an object.
+2021-04-11 22:41:40.6915|INFO|BlogsConsole.Program|Program started
