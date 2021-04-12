@@ -47,6 +47,8 @@ namespace BlogsConsole
             foreach (var item in query)
             {
                 Console.WriteLine(item.PostId + ") " + item.Title);
+                Console.WriteLine(item.Content + "\n");
+                
             }
         }
 
@@ -84,52 +86,72 @@ namespace BlogsConsole
                 }
             }
         }
+
+        static bool isUniqueBlog(BloggingContext db, Blog blog) {
+            var query = db.Blogs.OrderBy(b => b.Name);
+            foreach (var blogItem in query)
+            {
+                if (blogItem.Name == blog.Name) {
+                    return false;
+                }
+            }
+            return true;
+        }
         static void Main(string[] args)
         {
             logger.Info("Program started");
-
-            try
-            {
-                var db = new BloggingContext();
-                string choice = mainMenu();
-                Blog blog;
-                switch (choice)
+            bool run = true;
+            while(run) {
+                try
                 {
-                    case "1":
-                    // Display All Blogs, pass in database context
-                        displayAllBlogs(db, false);
-                        break;
-                    case "2":
-                    // Add Blog
-                        db.AddBlog(createBlogWorkflow());
-                        break;
-                    case "3":
-                    // Create Post
-                        blog = postPreWorkflow(db);
-                        var post = createPost(db, blog);
-                        db.Posts.Add(post);
-                        break;
-                    case "4":
-                    // Display Posts
-                        blog = postPreWorkflow(db);
-                        listPostsByBlogId(db, blog);
-                        break;
-                    case "q":
-                    // Exit 
-                        break;
-                    default:
-                        Console.WriteLine("Please Enter A Valid Option.");
-                        break;
+                    var db = new BloggingContext();
+                    string choice = mainMenu();
+                    Blog blog;
+                    switch (choice)
+                    {
+                        case "1":
+                        // Display All Blogs, pass in database context
+                            displayAllBlogs(db, false);
+                            break;
+                        case "2":
+                        // Add Blog
+                            blog = createBlogWorkflow();
+                            if(isUniqueBlog(db, blog)){
+                                db.AddBlog(blog);
+                            } else {
+                                logger.Error("Please Choose a Unique Blog Name");
+                            }
+                            break;
+                        case "3":
+                        // Create Post
+                            blog = postPreWorkflow(db);
+                            var post = createPost(db, blog);
+                            db.AddPost(post);
+                            logger.Info("Added Post");
+                            break;
+                        case "4":
+                        // Display Posts
+                            blog = postPreWorkflow(db);
+                            listPostsByBlogId(db, blog);
+                            break;
+                        case "q":
+                        // Exit
+                            run = false;
+                            break;
+                        default:
+                            Console.WriteLine("Please Enter A Valid Option.");
+                            break;
+                    }
+
+                }
+                catch (Exception ex)
+                {
+                    logger.Error(ex.Message);
                 }
 
             }
-            catch (Exception ex)
-            {
-                logger.Error(ex.Message);
-            }
 
             logger.Info("Program ended");
-        
         }
     }
 }
